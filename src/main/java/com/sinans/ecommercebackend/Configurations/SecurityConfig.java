@@ -32,7 +32,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/ecommerce/users/register", "/ecommerce/users/login", "/ecommerce/products/getall", "/ecommerce/products/{id}", "/ecommerce/products/search/**").permitAll()
+                        .requestMatchers("/ecommerce/users/register", "/ecommerce/users/login", "/ecommerce/users/verify", "/ecommerce/products/getall", "/ecommerce/products/{id}", "/ecommerce/products/search/**").permitAll()
                         .requestMatchers("/ecommerce/users").hasRole("ADMIN")
                         .requestMatchers("/ecommerce/cart/**").hasRole("USER")
                         .anyRequest().authenticated()

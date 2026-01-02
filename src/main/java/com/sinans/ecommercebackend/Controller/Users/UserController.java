@@ -32,4 +32,14 @@ public class UserController {
     public String login(@RequestBody LoginRequest loginRequest) {
         return userService.login(loginRequest);
     }
+
+    @GetMapping(path = "users/verify")
+    public void verifyUser(@RequestParam String token ) {
+        userService.verifyUser(token);
+    }
+
+    @PostMapping(path =  "/users/resendverification")
+    public void sendVerification(@RequestBody EmailSubmission email) {
+        userService.resendVerificationEmail(email.getEmail());
+    }
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify Your Email</title>
+</head>
+<body>
+    <h1>Verify Your Email</h1>
+    <h2>Hello <span th:text="${username}">User</span> 👋</h2>
+    <p>Please verify your account by clicking the button below:</p>
+
+    <a th:href="${token}"
+       style="background-color: #4CAF50; color: white; padding: 12px 20px;
+                  text-decoration: none; border-radius: 6px;">
+        Verify Email
+    </a>
+
+    <p style="margin-top: 20px; color: #888;">
+        This link will expire in 1 hour.
+    </p>
+</body>
+</html>
+
